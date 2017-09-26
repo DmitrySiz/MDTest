@@ -3,6 +3,7 @@ package pages;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.annotations.DefaultUrl;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 /**
@@ -28,8 +29,8 @@ public class GoogleSearchPage extends PageObject{
 
     public void openMoeDeloPromo() throws InterruptedException {
         waitFor(moeDeloLink).isVisible();
-        moeDeloLink.click();
-        Thread.sleep(5000);
+        MoeDeloPromoPage moeDeloPromoPage = this.switchToPage(MoeDeloPromoPage.class);
+        moeDeloPromoPage.open();
     }
 
 }
